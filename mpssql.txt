@@ -1,0 +1,140 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jan 29 09:20:58 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> select * from mobiles;
+
+  MOBILEID NAME                      PRICE QUANTITY
+---------- -------------------- ---------- --------------------
+      1001 Nokia Lumia 520            8000 20
+      1002 Samsung Galaxy IV         38000 40
+      1003 Sony xperia C             15000 30
+
+SQL> select * from purchasedetails;
+
+PURCHASEID CNAME                MAILID
+---------- -------------------- ------------------------------
+PHONENO              PURCHASED   MOBILEID
+-------------------- --------- ----------
+      5021 Hellodgsgdg          lakalaka@gmail.com
+9292929494           29-JAN-19       1003
+
+      5001 Bindu                bindusri@gmail.com
+9493885691           24-JAN-19       1001
+
+      5002 Sindhu               sindhu@gmail.com
+8989898989           25-JAN-19       1002
+
+
+PURCHASEID CNAME                MAILID
+---------- -------------------- ------------------------------
+PHONENO              PURCHASED   MOBILEID
+-------------------- --------- ----------
+      5022 Hellodgsgdg          lakalaka@gmail.com
+9292929494           29-JAN-19       1003
+
+      5023 Hellodgsgdg          lakalaka@gmail.com
+9292929494           29-JAN-19       1003
+
+      5024 Hellodgsgdg          lakalaka@gmail.com
+9292929494           29-JAN-19       1003
+
+
+PURCHASEID CNAME                MAILID
+---------- -------------------- ------------------------------
+PHONENO              PURCHASED   MOBILEID
+-------------------- --------- ----------
+      5025 Hellodgsgdg          lakalaka@gmail.com
+9292929494           29-JAN-19       1003
+
+
+7 rows selected.
+
+SQL> set linesize 180;
+SQL> select * from purchasedetails;
+
+PURCHASEID CNAME                MAILID                         PHONENO              PURCHASED   MOBILEID
+---------- -------------------- ------------------------------ -------------------- --------- ----------
+      5021 Hellodgsgdg          lakalaka@gmail.com             9292929494           29-JAN-19       1003
+      5001 Bindu                bindusri@gmail.com             9493885691           24-JAN-19       1001
+      5002 Sindhu               sindhu@gmail.com               8989898989           25-JAN-19       1002
+      5022 Hellodgsgdg          lakalaka@gmail.com             9292929494           29-JAN-19       1003
+      5023 Hellodgsgdg          lakalaka@gmail.com             9292929494           29-JAN-19       1003
+      5024 Hellodgsgdg          lakalaka@gmail.com             9292929494           29-JAN-19       1003
+      5025 Hellodgsgdg          lakalaka@gmail.com             9292929494           29-JAN-19       1003
+
+7 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL>  drop table purchasedetails;
+
+Table dropped.
+
+SQL> CREATE TABLE purchasedetails(purchaseid NUMBER, cname vARCHAR2(20), mailid VARCHAR2(30),phoneno VARCHAR2(20), purchasedate DATE,mobileid number);
+
+Table created.
+
+SQL> alter table purchasedetails add constraint fk_pd_purchaseid foreign key(mobileid) references mobiles(mobileid) on delete set null;
+
+Table altered.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> select * from purchasedetails;
+
+no rows selected
+
+SQL> select * from purchasedetails;
+
+PURCHASEID CNAME                MAILID                         PHONENO              PURCHASED   MOBILEID
+---------- -------------------- ------------------------------ -------------------- --------- ----------
+      5026 Bindsri              Bindu123@gmail.com             9493885691           29-JAN-19       1001
+
+SQL> select * from purchasedetails;
+
+PURCHASEID CNAME                MAILID                         PHONENO              PURCHASED   MOBILEID
+---------- -------------------- ------------------------------ -------------------- --------- ----------
+      5026 Bindsri              Bindu123@gmail.com             9493885691           29-JAN-19       1001
+      5027 Sindhusri            Sindhu@gmail.com               9090909090           29-JAN-19       1002
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from purchasedetails;
+
+PURCHASEID CNAME                MAILID                         PHONENO              PURCHASED   MOBILEID
+---------- -------------------- ------------------------------ -------------------- --------- ----------
+      5026 Bindsri              Bindu123@gmail.com             9493885691           29-JAN-19       1001
+      5027 Sindhusri            Sindhu@gmail.com               9090909090           29-JAN-19       1002
+      5028 Sravya               Sravya@gmail.com               9898989898           29-JAN-19       1003
+
+SQL> commit;
+
+Commit complete.
+
+select * from purchasedetails;
+
+PURCHASEID CNAME                MAILID                         PHONENO              PURCHASED   MOBILEID
+---------- -------------------- ------------------------------ -------------------- --------- ----------
+      5026 Bindsri              Bindu123@gmail.com             9493885691           29-JAN-19       1001
+      5027 Sindhusri            Sindhu@gmail.com               9090909090           29-JAN-19       1002
+      5028 Sravya               Sravya@gmail.com               9898989898           29-JAN-19
+
+SQL> select * from mobiles;
+
+  MOBILEID NAME                      PRICE QUANTITY
+---------- -------------------- ---------- --------------------
+      1001 Nokia Lumia 520            8000 19
+      1002 Samsung Galaxy IV         38000 39
