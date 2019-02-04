@@ -1,0 +1,307 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            
+
+
+
+	
+
+
+
+
+ 
+Document Control
+
+
+Reference No:	
+Security Classification:	Internal
+Issue Date:	
+Author(s):	Name	Title
+	Shrilata Tavargeri	Manager – T & D
+		
+Reviewer(s):	Name	Title
+	Training Team	Executive, Managers – T&D
+Issuer(s):	Name	Title
+	Dinesh Anantwar	Sr. Manager
+Issuer Signature(s):	
+Distribution:	Name	Title
+	Team	All Designations in Training
+		
+		
+Document History:	Date	Revision	Change
+	Nov 24, 08	0.01D	Initial draft
+	Nov 29, 08	0.02D	Review comments incorporated
+	July 03,13	0.03D	Changes in Miniproject document content to standardize for 60 days training.
+	June 29,15	0.04D	Changes in Miniproject document content as per the upgraded courses
+
+
+
+
+Table of Contents
+1	Introduction	4
+1.1	Setup Checklist for Mini Project	4
+1.2	Instructions	4
+2	Problem Statement	5
+2.1	Objective	5
+2.2	Abstract of the project	5
+2.3	Functional components of the project	5
+2.4	Technology to use	6
+3	Implementation in J2EE LOT	7
+3.1	Summary of the functionality to be built:	7
+3.2	Guidelines on the functionality to be built:	8
+3.3	Evaluation and assessment parameters	13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1	INTRODUCTION
+
+This document outlines a mini project for the J2EE LOT. The project is to develop an standalone Loan Application Processing System (LAPS). This document contains the work flow of the system and gives guidelines on how to build the functionality gradually in each of the course modules of the J2EE LOT.
+
+1.1	SETUP CHECKLIST FOR MINI PROJECT
+Minimum System Requirements
+•	Intel Pentium 90 or higher (P166 recommended)
+•	Microsoft Windows 95, 98, or NT 4.0, 2k, XP, Windows 7
+•	Memory: 32MB of RAM (64MB or more recommended)
+•	Internet Explorer 6.0 or higher
+•	Oracle 9i client and access to oracle 9i server
+•	JDK 8
+•	Eclipse Luna
+•	JUnit 4.0,log4j
+1.2	INSTRUCTIONS
+•	The code modules in the mini project should follow all the coding standards. 
+•	Create a directory by your name in drive D. In this directory, create a subdirectory MiniProject<Groupcode>. Store your Project here.
+•	You can refer to your course material.
+•	You may also look up the help provided in the java docs and documentation provided with WildFly.
+•	The total time required to complete this mini project is 50 hrs.
+•	Since this project work will span over couple of months, you will need to take care of maintaining the code
+
+
+
+
+
+
+
+2	PROBLEM STATEMENT
+2.1	OBJECTIVE 
+Develop a Loan Application Processing System (LAPS), for a home finance provider. 
+2.2	ABSTRACT OF THE PROJECT
+This project is aimed at developing an standalone Loan Application Processing System (LAPS), for a home finance provider, which is used by customers to apply for loan and by the loan approval department (lad) for processing loan. This is a web based application that can be accessed throughout the web. This system can be used by the customers to search a suitable loan program offered by the home finance provider without any login and fill up the loan application form, administration staff can add/update/delete any loan program that the home finance provider offers/updates/cancels. Members of loan approval department (lad) have the responsibility to verify information provided by the customer and take a decision on the approval of loan in consultation with concerned approvers. There are features like report generators etc in this system.
+
+2.3	FUNCTIONAL COMPONENTS OF THE PROJECT
+Following is a list of functionalities of the system. Wherever, the description of functionality is not adequate; you can make appropriate assumptions and proceed.
+
+There are three categories of people who would access the system viz. customers (loan applicants), members of loan approval department (lad) and administrators. Each one of them would have some exclusive privileges (for e.g. Customers can apply for a program by filling up the online form without any login process, members of loan approval department (lad) alone will be able to view loan applications, approve or reject the application for a specific loan program. Only the administrator has the right to keep track of the home finance provider’s loan program details.)
+
+1.	Customers should be able to 
+
+•	View all loan programs offered by the home finance provider
+•	Apply online for a loan program offered by the home finance provider, by filling up the application form that auto generates the application ID
+•	View the application status of application, based on the application ID
+2.	The member of loan approval department (lad) should be able to :
+•	Login into the system using his/her credentials.
+•	View all loan programs offered by the home finance provider
+•	View loan applications for a specific loan program.
+•	Accept/Reject an application on the basis of the details of the loan applicant. If loan application is acceptable, loan application status is changed to ‘Accepted’, the scheduled date for an interview (of the loan applicant for verification of applicant’s documents, before approving the applicant’s loan under the mentioned loan program) is filled into the application form. 
+•	After the interview, the status of the loan application is changed to Approved/Rejected
+
+3.	The administrators should be able to
+
+•	login to the system using his/her credentials 
+•	Update and manage (add or delete) information of the loan programs offer by the home finance provider
+•	Generate various reports like:
+?	View List of loan applications approved/accepted (waiting for interview)/rejected for a loan program.
+?	View all loan programs offered by the home finance provider
+Transition of Status: Applied ->Accepted/Rejected->Approved/Rejected
+2.4	TECHNOLOGY TO USE
+?	Front End & Web Components:– 
+1.	HTML/JavaScript
+2.	Servlets
+3.	JSP
+
+?	Business Logic Components and Services :- 
+1.	Java Beans
+
+?	Application Servers:- 
+1.	WildFly
+
+?	Databases:-
+1.	Oracle 9i
+
+
+
+
+
+3	IMPLEMENTATION IN J2EE LOT
+3.1	SUMMARY OF THE FUNCTIONALITY TO BE BUILT: 
+The participants need to develop the Online LAPS by building the functionality incrementally in each of the course modules of J2EE LOT. 
+
+Sr. No	Course	Duration
+(in PDs)	No. of Saturdays	Functionality to be built
+1	Programming Foundation with Pseudo code	3	1	Analyze the given case study
+2	Introduction to Software Engineering	0.5		Analyze the Case study using SDLC phases.
+3	Web Basics (HTML 5,CSS 3, JavaScript, XML)	4.5	1	Developing prototype i.e. developing screens/web pages in HTML and client side validation in JavaScript.
+4	Oracle Basics	4	1	Creating relevant database tables
+5	OOP & UML	1.5	1	Creating relevant Use case and class diagrams
+	Programming Foundation with Pseudo code + Web Basics +Oracle Basics +OOP & UML Test	1		
+	Core Java 8 & Development Tools (Junit, Log4j)	10	2	Developing Business components (java classes). Coding for test classes & testing the functionality using JUnit
+				
+	Core Java 8 + Dev Tools + OOP/UML Test	1		
+8	Servlets 	3.5	2	Project specific implementation not needed as mini project is in Core Java.
+9	JSP	2		
+10	Developer Workbench (PMD, MAVEN)	1		
+11	Servlets + JSP + Dev Workbench Test	1		
+12	Basic Spring 4.0	5	1	
+Prepare document for presentation.
+13	Basic Spring Test	1		
+14	Mini Project presentation	1		
+3.2	GUIDELINES ON THE FUNCTIONALITY TO BE BUILT: 
+
+The functionality and components to be built in each of the course modules of J2EE LOT is as follows:
+a.	Develop the following 
+i.	View Loan Programs : This provides the customers (loan applicant) with information on the loan programs offered by the home finance provider. This has a option to ‘Apply for Loan’ only if viewed by customers. Same option is available to the administrators as well as members of loan approval department (lad), for them the ‘Apply for Loan’ link does not appear.
+ii.	Apply for Loan: Allows customers (loan applicant) to fill in and submit loan application form for a loan program. These details are stored in the LoanApplications table, an applicant ID is auto generated at DB level. The loan application form also includes personal details of the customer that will be stored in the CustomerDetails table.
+iii.	View Loan Application Status: Allows customers (loan applicant)  to view the status of their loan application by entering the Applicantion_id
+Note: No login is required for the customers (loan applicant).
+iv.	Maintain Information on Loan Programs Offered: This functionality should be available only for authorized administrators. Administrations maintain valid information about loan programs offered by the home finance provider (add new / delete existing) such that it does not affect the integrity of the data. Update details of loan programs offered only if it does not affect the existing applicants for that loan program and only relevant fields are updatable.
+v.	Loan Approval Screen: This screen should only be available to authorized members of loan approval department (lad). She/he must be able to view the loan applications for a specific loan program, Accept/Reject the loan application and update the loan application status accordingly. If the loan application is ‘accepted’ for the program, an interview date should be entered, (during the interview, document proofs and the customer’s information will be verified by the loan approver). If loan applicant’s interview is already conducted, the loan application status should be changed to either Approved or Rejected. Any change in the status of an application should result in an email being sent to the customer (loan applicant) notifying him/her the details of change in status.
+vi.	View list of applications Accepted/Rejected/Confirmed for a particular Loan Program: This should display details of loan applicants Accepted/Rejected/Approved for a particular loan program. This functionality should be available only for authorized administrators.
+vii.	View Loan Applications for a Loan Program: This should only be available to authorized members of loan approval department (lad). She/he must be able to view all the applicant data based on loan program
+
+b.	In this course you need to develop the user interface using HTML and document the flow of your application including the images of html page in a word document. The screens/web pages should include the fields as per the functionality mentioned above. Also, include client-side validations using Regular expressions in each of these.
+
+2.	Course: Oracle (Duration: 5 hours)
+a.	Create the following database tables:
+i.	LoanApplicantion: This will contain the list of valid loan applications (Loan Applicants fill in the application form)
+ii.	CustomerDetails : This will contain details of the customers (Loan Applicants), extracted from the loan application form that is filled by the customers (loan applicants) to apply for loan offered by the home finance provider
+iii.	LoanProgramsOffered: This will contain details of loan programs offered by the home finance provider
+iv.	ApprovedLoans : This will contain details of approved loans
+v.	Users : This will contain all the valid logins and passwords, there is no screen to enter values in this table, assume that this table is present with valid data, that will be used by this application
+b.	The structure of the above listed tables is as follows:
+i.	LoanApplication : Application_id (auto generated serial no.),application_date(date),Loan_program(varchar(10)),AmountofLoan(number),AddressofProperty(varchar(30)),AnnualFamilyIncome(number),DocumentProofsAvailable(varchar(50)),GuaranteeCover (varchar(20)),MarketValueofGuaranteeCover(number), Status(varchar(10)), DateOfInterview(date)
+ Notes: 
+•	Possible values of status are ‘applied’ by default, ‘accepted’ ,’rejected’ and ’approved’
+•	Application date is systems date
+•	Program ID of the loan program that is selected by the applicant
+•	Address of Property on which loan is required
+•	What document proofs can be produced by the applicant
+•	Specify the details, in case applicant can provide guarantee cover and its market value
+•	In case the application is accepted, the date on which the applicant is expected to visit the home finances provider’s office. The applicant is expected to produce the documents (as proof of genuineness) of the information provided by the applicant.
+
+ii.	CustomerDetails:Application_ID(FK),Applicant_name(varchar(20)),date_of_birth (date), marital_status(varchar(10)), phone_number(number), mobile_number(number), CountofDependents(number), email_ id(varchar(20)),
+ 
+Note: Personal details of the customer (applicant) are extracted from the loan application form
+
+iii.	LoanProgramsOffered: ProgramName (varchar(5)), description (varchar(20)), type(varchar(00)), durationinyears(number), minloanamount(number),maxloanamount(number),rateofinterest(number), proofs_required(varchar(20))
+
+Note: Loan types are Purchase,Construction,Extension,Renovation
+
+iv.	ApprovedLoans: Application_ID(FK), Customer_name(varchar(20),amountofloangranted(number),monthlyinstallment(number),yearstimeperiod(number), downpayment(number),rateofinterest(number), totalamountpayable(number)
+
+Note: Customer_name is same as applicant name
+
+v.	Users : login_id(varchar(5), password(varchar(10)), role(varchar(5)) 
+
+Note: Possible values of role are ‘admin’,’lad’
+
+
+3.	Course: OOP & UML (Duration: 5 hours)
+a.	Develop relevant Use case and Class diagrams for the LAPS application.
+
+4.	Course: Core Java 8 + Developer Tools (Duration: 28 hours)
+a.	Develop business components (java classes) for the following functionality:
+i.	Login verification: This component will authenticate the user. Verify if the user who is trying to access the system is a valid user. This verification is as against the valid users listed in the users table, which has valid logins for administrators and members of loan approval department (lad).There is no login required for a customer (loan applicant).
+
+ii.	Retrieve Loan Programs Offered: This component provides information on all loan programs offered by the home finance provider. Available to all users.
+iii.	Apply for Loan: This component should allow a customer (loan applicant) to submit his/her loan application for a loan program. An Applicantion_id is auto generated at DB level and shown to the loan applicant.
+iv.	Retrieve Loan Application Status: A customer (loan applicant) should be able to view the status of his/her loan application by entering the Applicantion_id
+
+v.	Maintain Loan Programs Offered Information: This is a typical CRUD (Create/Read/Update/Delete) operation. This functionality should be available only for authorized administrators. Administrations maintain information about the Loan Programs Offered (add/update/delete) by the home finance provider. Only valid operations should be performed on the data, so that the data integrity is maintained, and it des not lead this s/w application to an ambiguous state. For Ex. A loan program offered cannot be deleted /updated if there are loan applicants in the phase of approval for it.
+
+vi.	Retrieve Applications for Loan Program: This should only be available to authorized members of loan approval department (lad). This component should retrieve all loan applicant data based on loan program
+
+vii.	Approve Loans: This component allows for update status of a loan application and enter the date of interview only upon ‘Accepting’ an application. This should only be available to authorized members of loan approval department (lad). [He/She must be able to view the loan applicants for a specific loan program and Accept/Reject the application and update the application status accordingly.] Status can be changed to ‘approved’ only after, the previous status was ‘accepted’ and the date of interview is present, dated previous to or same as today’s date. If the application is accepted for the loan program, an interview date should be entered. If the applicant’s interview is conducted, the status should be changed to either Approved or Rejected. 
+
+viii.	View list of applications Accepted/Rejected/Approved for a particular Loan Program : Available to only administrators this component retrieves details of loan applications Accepted/Rejected/Approved for a particular loan program
+
+b.	Develop test classes for testing the following functionality
+i.	Login
+ii.	Apply for Loan.
+iii.	Retrieve Loan Application Status
+c.	Test the application using JUnit.
+d.	Configure Logger to log the status of an application
+
+//not required
+
+5.	Course: Core Java Clases + Developer Workbench (Duration: 14 hours)
+
+
+a.	Convert all the java classes (business components) created in Java module to Java beans
+b.	Integrate all screens with business components (java beans) to complete the entire functionality
+
+
+6.	Documentation (Duration: 2 hours)
+a.	Project Documentation: Document your project details (Duration: 1 hour 30 mins).
+b.	Project submission: Submit your project with all the artifacts including the test cases & documentation (Duration: 30 mins).
+3.3	EVALUATION AND ASSESSMENT PARAMETERS
+This miniproject will be done in groups of five. Each group will identify a Team Lead who will decide which team member will code for which functionality. This project shall be evaluated at the end of spring module.
+
+Evaluation Criteria (out of 100):
+
+
+Look of console for all the screens	05
+Client-side validation of inputs	10
+Code Documentation and using coding standards	10
+Overall Business logic. This includes:
+•	Usage of Logging API (log4j)	30
+Good amount of appropriate dataset to showcase project completely	5
+Appropriate test cases using JUnit 4.0	5
+Using MVC architecture and clean encapsulation of business logic in appropriate components. Judicious use of java beans.
+	35
+
