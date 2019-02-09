@@ -1,0 +1,352 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Sat Feb 9 09:37:09 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> create table trainer_details(id number primary key,name varchar2(20) not null,location varchar2(20) not null,designation varchar2(20),technology varchar2(20),contactNo varchar2(10));
+
+Table created.
+
+SQL>  CREATE SEQUENCE Trainer_Id_Seq start with 143426;
+ CREATE SEQUENCE Trainer_Id_Seq start with 143426
+                 *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> insert into trainer_details values(143421,'Kavita','Mumbai','senior consultant','jee','9898786543');
+
+1 row created.
+
+SQL> insert into trainer_details values(143422,'Anjulata','Pune','senior consultant','jee','7878654532');
+
+1 row created.
+
+SQL> insert into trainer_details values(143423,'Tanmaya','Bangalore','senior consultant','mainframes','9090985432');
+
+1 row created.
+
+SQL> insert into trainer_details values(143424,'vaishali','Pune','senior consultant','cloud','9192936545');
+
+1 row created.
+
+SQL> insert into trainer_details values(143425,'Bharathi','Mumbai','consultant','jee','9089786756');
+
+1 row created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> CREATE SEQUENCE Trainer_Id_Seq1 start with 143426;
+
+Sequence created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION
+---------- -------------------- -------------------- --------------------
+TECHNOLOGY           CONTACTNO
+-------------------- ----------
+    143421 Kavita               Mumbai               senior consultant
+jee                  9898786543
+
+    143422 Anjulata             Pune                 senior consultant
+jee                  7878654532
+
+    143423 Tanmaya              Bangalore            senior consultant
+mainframes           9090985432
+
+
+        ID NAME                 LOCATION             DESIGNATION
+---------- -------------------- -------------------- --------------------
+TECHNOLOGY           CONTACTNO
+-------------------- ----------
+    143424 vaishali             Pune                 senior consultant
+cloud                9192936545
+
+    143425 Bharathi             Mumbai               consultant
+jee                  9089786756
+
+
+SQL> set linesize 180;
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+
+SQL> desc trainer_details;
+ Name                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------
+ ID                                                                                                    NOT NULL NUMBER
+ NAME                                                                                                  NOT NULL VARCHAR2(20)
+ LOCATION                                                                                              NOT NULL VARCHAR2(20)
+ DESIGNATION                                                                                            VARCHAR2(20)
+ TECHNOLOGY                                                                                             VARCHAR2(20)
+ CONTACTNO                                                                                              VARCHAR2(10)
+
+SQL> select Trainer_Id_Seq1.nextval;
+select Trainer_Id_Seq1.nextval
+                             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> Trainer_Id_Seq1.nextval;
+SP2-0734: unknown command beginning "Trainer_Id..." - rest of line ignored.
+SQL> select Trainer_Id_Seq1.nextval;
+select Trainer_Id_Seq1.nextval
+                             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select Trainer_Id_Seq1.currval;;
+select Trainer_Id_Seq1.currval;
+                              *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> create sequencce Trainer_id_Seq1;
+create sequencce Trainer_id_Seq1
+       *
+ERROR at line 1:
+ORA-00901: invalid CREATE command
+
+
+SQL> create sequencce Trainer_id_Seq1 start from 1;
+create sequencce Trainer_id_Seq1 start from 1
+       *
+ERROR at line 1:
+ORA-00901: invalid CREATE command
+
+
+SQL> create sequence Trainer_id_Seq1 start with 1;
+create sequence Trainer_id_Seq1 start with 1
+                *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> select Trainer_Id_Seq1.currval;
+select Trainer_Id_Seq1.currval
+                             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select Trainer_Id_Seq1.nextval;
+select Trainer_Id_Seq1.nextval
+                             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select Trainer_Id_Seq1.nextval from dual;
+
+   NEXTVAL
+----------
+    143446
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+
+SQL> select Trainer_Id_Seq1.nextval from dual;
+
+   NEXTVAL
+----------
+    143462
+
+SQL> insert into trainer_details values(Trainer_Id_Seq1.nextval,'String','nodia','consulatnt','jee',9696969696);
+
+1 row created.
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+    143454 Bindusri             Chennai              senior consultant    mainframes           9696969696
+    143456 Bindusri             Mumbai               consultant           cloud                9696969696
+    143458 Bindusri             Hyderabad            consultant           jee                  9595959595
+    143460 Sindhu               Hyderabad            consultant           jee                  9595959595
+    143463 murali               Hyderabad            senior consultant    cloud                9493885691
+    143465 String               nodia                consulatnt           jee                  9696969696
+
+11 rows selected.
+
+SQL> delete from trainer_details where id= 143454;
+
+1 row deleted.
+
+SQL> delete from trainer_details where id=143456;
+
+1 row deleted.
+
+SQL> delete from trainer_details where id= 143458;
+
+1 row deleted.
+
+SQL> delete from trainer_details where id= 143460;;
+delete from trainer_details where id= 143460;
+                                            *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> delete from trainer_details where id= 143460;
+
+1 row deleted.
+
+SQL> delete from trainer_details where id= 143463;
+
+1 row deleted.
+
+SQL> delete from trainer_details where id= 143465;
+
+1 row deleted.
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+    143466 murali               Hyderabad            consultant           jee                  9696969696
+
+6 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> delete from trainer_details where id= 143466;
+
+1 row deleted.
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+
+SQL> commit;
+
+Commit complete.
+
+SQL> drop sequence Trainer_Id_Seq1;
+
+Sequence dropped.
+
+SQL> CREATE SEQUENCE Trainer_Id_Seq1 start with 143426;
+
+Sequence created.
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+    143426 murali               Hyderabad            consultant           cloud                9696636363
+
+6 rows selected.
+
+SQL> select * from trainer_details;
+
+        ID NAME                 LOCATION             DESIGNATION          TECHNOLOGY           CONTACTNO
+---------- -------------------- -------------------- -------------------- -------------------- ----------
+    143421 Kavita               Mumbai               senior consultant    jee                  9898786543
+    143422 Anjulata             Pune                 senior consultant    jee                  7878654532
+    143423 Tanmaya              Bangalore            senior consultant    mainframes           9090985432
+    143424 vaishali             Pune                 senior consultant    cloud                9192936545
+    143425 Bharathi             Mumbai               consultant           jee                  9089786756
+    143426 murali               Hyderabad            consultant           cloud                9696636363
+    143427 Bindusri             Hyderabad            senior consultant    mainframes           9498858585
+    143428 Vishnu               Chennai              senior consultant    mainframes           9638527414
+    143429 Bindusri             Chennai              senior consultant    cloud                7878787878
+    143430 Vishnu               Pune                 senior consultant    mainframes           9874563210
+    143431 Vishnuv              Chennai              senior consultant    cloud                9948068434
+
+11 rows selected.
+
+SQL>
